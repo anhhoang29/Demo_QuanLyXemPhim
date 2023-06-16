@@ -1,0 +1,696 @@
+{
+	"info": {
+		"_postman_id": "45a8ca0b-7d05-47c0-974e-f587806bbcb8",
+		"name": "Mobile BE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17165402",
+		"_collection_link": "https://orange-capsule-364032.postman.co/workspace/doduongthaituan~19a5dfe8-ee06-487e-8d29-c04d5235a594/collection/17165402-45a8ca0b-7d05-47c0-974e-f587806bbcb8?action=share&creator=17165402&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"doduongthaituan201102@gmail.com\",\r\n    \"password\" : \"doduongthaituan201102@gmail.com\", \r\n    \"role\": 1, \r\n    \"isGoogleLogin\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "to-email",
+									"value": "doduongthaituan201102@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://a619-1-53-51-26.ngrok-free.app/api/sign-up-account",
+							"protocol": "https",
+							"host": [
+								"a619-1-53-51-26",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"api",
+								"sign-up-account"
+							]
+						},
+						"description": "Register"
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..Ze-fym4fGfq4466Z3VHsIQ.CYwFzyHzx36w6Oa53uuxrdMa12DA6Qfs_06z2kuM9Kg9g4BwecDcN2pZMdlBT7GSiKITz6cpp6qjLzZAeP8BtaSHqyoz0T_h6Tb4jVIoJNJKpA3-z6CGpU8tatpYDL5Z.afR6JOnugvgcpCgFGWuecA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Refresh-Token",
+								"value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..6Cd1v-wV5kieLMK0uZAixw.ACmJ5kD6gRoULkrVd7jPpYV80-ZVb7xvlmyqFHdL7x9kXFEKsETYHCX3eFBBjuU322oP9uJUeUhcbUNiGokbXNtgEbEDZTqR8u_qsc_TbW1qBHYW-SlrBgcWeg0TG8ls.dy_AsahKgWsaHTPEgvsN4A",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..Qfu1bpsbreUoKWjWyztKsA.T5m0ZUkpJ-ki8uzZfMqf5w1jmomPh0HeXM4tdh2PtsNCj0AKJxhUM-qCBke-R-stG0I04jIQPd21jBru9Wv8XJyFx7OWxBD1mijNBI7-hiXbiAZldVD-UWweNc3kGSiu.bff5ZD5FRdU0b0TNudlx3Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"doduongthaituan201102@gmail.com\",\"password\" : \"doduongthaituan201102@gmail.com\", \"role\": 1, \"isGoogleLogin\": true}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"refresh-token"
+							]
+						},
+						"description": "Refresh token"
+					},
+					"response": []
+				},
+				{
+					"name": "verify account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "otp-code",
+									"value": "885540",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://a619-1-53-51-26.ngrok-free.app/api/sign-up-account/verify-account",
+							"protocol": "https",
+							"host": [
+								"a619-1-53-51-26",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"api",
+								"sign-up-account",
+								"verify-account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "get detail product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..jyv64wShBBz1byiQbgX7cg.nMTR-KMdEq-ZmWYG9Y8VLcNiadjJ_7PjMBvNMKqfjjVyxzyxS-5kwdYrbrOqmcaSDp_mAsDl4g7jkbj7wXi0n3jt51gM-JYsoRFScjYO4WbFIBF-uvMpa7NIfgNDNBMW.ii5Y99hxJT5fRrtdCPur9A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/product/get-detail-product-by-id/PR2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"product",
+								"get-detail-product-by-id",
+								"PR2"
+							]
+						},
+						"description": "detail product"
+					},
+					"response": []
+				},
+				{
+					"name": "get product by category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..ZiQACYsXx0R0C6wtKusViA.hlWqAN17XuuKo4qFtz_Y9RZxAb8rUMrYiZsbFz_IGpuZQQHs6tpY9ysCsaHNMAQZJBX6meynU30_3Kc9C0XkoOoqjBFGtaCQNiy0I3OS4AvW__iyI10OoD4xNTXX2gPb.OiapnX66iWGhpA5BBsxltQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/product/get-product-by-category-id?id=CA1&pageNo=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"product",
+								"get-product-by-category-id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "CA1"
+								},
+								{
+									"key": "pageNo",
+									"value": "0"
+								}
+							]
+						},
+						"description": "get product by category id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "Update profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..PqxbEK4J2tUfS9HnIfv_aw.MCIUT50h3wD91LPYNcp_TF6RZ9UBM7agReFZ9jE-roL1kx2WSJAF7DwtIOhx4i5W3NFR6FbikdJj4Ay68b9f7XnNUCWETxIHhymQ1-UM6ERJrhQLXpnfmVeabYaXbrZn.1mk4uhyzlGFKXLTMmF6rrg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tonngokhong29102002@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/admin/Downloads/Cà phê/Slide/1360-x-540px-1536x610.jpg"
+								},
+								{
+									"key": "displayName",
+									"value": "Ton Ngo Khong",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "null",
+									"type": "text"
+								},
+								{
+									"key": "phonenumber",
+									"value": "0987654321",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "CU657829",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/profile/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"profile",
+								"update"
+							]
+						},
+						"description": "update profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Get profile by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..dtfP4cyohv0i4J8WLhfhKw.lT_2HZFnH7hG1XjAwtq0JSG6L_Faszntx6Bq5wBpdvGsGoaE4EosOItZ1MSsbFEEMfMPHArEpm7-JwUhfYzfv9aLrWNWFiMUzMzO51TpHOQ2nv64lp8-hVjcNS6cMKHH._kTrFqVfuhbpFm27Zx5YLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/profile/get/CU657829",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"profile",
+								"get",
+								"CU657829"
+							]
+						},
+						"description": "lấy thông tin customer"
+					},
+					"response": []
+				},
+				{
+					"name": "load avatar profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/load-image/profile/CU657829",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"load-image",
+								"profile",
+								"CU657829"
+							]
+						},
+						"description": "get image profile"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "slide",
+			"item": [
+				{
+					"name": "Add new slide",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..gUxZUMWgPbZ_rEn9Zq29eg.-keKKpnxxQxMZnhE4EGQWgvVhY9oWEnFJHO92f2vTB8sA6Bg79zn309IKKTMcRgPwOUMqTU0chPn0UJESy-S-MzICxwda4tmYLh7UnN308QKYiDKA0xxIV-x06xcPIO3.NNs_iCQFuhG2NaXc6P0k8Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "detail",
+									"value": "image",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/C:/Users/admin/Downloads/Cà phê/Slide/Love.png",
+										"/C:/Users/admin/Downloads/Cà phê/Slide/Master_KV.png",
+										"/C:/Users/admin/Downloads/Cà phê/Slide/Respect.png",
+										"/C:/Users/admin/Downloads/Cà phê/Slide/Support-update_2.png"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/slide/add-new-slide",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"slide",
+								"add-new-slide"
+							]
+						},
+						"description": "add new slide\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all slide",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..gMnCzQTBbgxNOZ6jjvBnFw._mumXxiJHRo1eSXtb5fxQJN7fc2QQe0fkqjZgesS9aN9kEUryo6YF6lHa4Ad0L_ZYWKn9pdfDDLL_iDwI_9-JN32OEnQ_tssATQCxu1Av02KkNDeg4DIgFvQcOIRNjng.IUCrRnKTGirCEuoL1HJ2Uw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/slide/get-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"slide",
+								"get-all"
+							]
+						},
+						"description": "get all slide"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "Get all category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "Bearer eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..z_qajuIvZQJrG3AB6qYyuw.dPV59ibEXU4APNSg7UzkP6E8BWuXUfNwWHcgN3L5mOQy3YG3ysTxIiEne8-vioJB0krQikuX_4OLqRpXaFYEFrDfBiOwilPDc98WE2HLzrfNe_q3C9pXwaJfSsaytDr6.R36Xoif9byaySPu1E7ofPQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/category/get-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"category",
+								"get-all"
+							]
+						},
+						"description": "get category\r\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "get order by customer id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/admin/Downloads/z4265990542384_e5338b58df6d6fe4ff9b51030ae2a343.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/order/get-all-by-customer-id/CU739932",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"order",
+								"get-all-by-customer-id",
+								"CU739932"
+							]
+						},
+						"description": "get order by customer"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LinItem",
+			"item": [
+				{
+					"name": "get lineitem by order id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..Nv8JI9VJSQjU1BnPT350uA.28XmLjsnbbtPOfRdZSXWFCdVDBghzna4iT5C-kHNuxR8-HcNmYNgFeT14dJQ5XiTK52XDOkn4n4DjNZZF6XNb-gAayQFToTFABHWMDQ7U1cQlXlzpq0RBCzG40QKZB00.E1zl07XTiyrb1uDIgewcjQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/line-item/get-all-by-order-id/{orderid}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"line-item",
+								"get-all-by-order-id",
+								"{orderid}"
+							]
+						},
+						"description": "get line item by order id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image",
+			"item": [
+				{
+					"name": "Get images by product id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..m_SQppv-sPVwV3sW4n350A.TzLPRNPMOEIUH8jF7xaHyppyP6niyTMF5uRJNlfVHJ1gjPsML8w3QDEuahXk9DtI9l1k7pGX9lPORxFygbtY6Ol1nG28ooOoLUoPHhLzSDtLc_vy1Bm2POfC-FVzsWkc.FmZhtpWpvBn5WI_z97p24w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/image/get-all-image-by-product-id/PR1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"image",
+								"get-all-image-by-product-id",
+								"PR1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..m_SQppv-sPVwV3sW4n350A.TzLPRNPMOEIUH8jF7xaHyppyP6niyTMF5uRJNlfVHJ1gjPsML8w3QDEuahXk9DtI9l1k7pGX9lPORxFygbtY6Ol1nG28ooOoLUoPHhLzSDtLc_vy1Bm2POfC-FVzsWkc.FmZhtpWpvBn5WI_z97p24w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "PR1",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/E:/Workspaces/learn/mobile-app/final/images/PR1/img1.jpg",
+										"/E:/Workspaces/learn/mobile-app/final/images/PR1/img2.jpg",
+										"/E:/Workspaces/learn/mobile-app/final/images/PR1/img3.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/image/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"image",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "images",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Checkout",
+			"item": [
+				{
+					"name": "save checkout",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
